@@ -13,12 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "Hello World!";
-});
 
-Route::get('/eror', function () {
-    return "Ini halaman error";
+// Route::get('/', function () {
+//     return "Hello World!";
+// });
+// Route::get('/eror', function () {
+//     return "Ini halaman error";
    
     
+// });
+
+Route::get('/', function () {
+    $title = "Home";
+    return view ("contents.home.index", compact('title'));    
 });
+
+Route::get('/blog', function () {
+    $title = "Blog";
+    return view ("contents.blog.index", compact('title'));    
+});
+
+Route::get('/about', function () {
+    $title = "About";
+    return view ("contents.about.index", compact('title'));    
+});
+
+
+
